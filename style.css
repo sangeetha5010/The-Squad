@@ -1,0 +1,628 @@
+
+/* =========================================
+   SUDHA HOME PRODUCTS
+   Minimal Logistics Control Tower
+   Palette: Forest Green, Ivory, Charcoal
+========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap');
+
+:root {
+    --background: #f5f4ef;
+    --surface: #ffffff;
+    --surface-soft: #f0efe9;
+    --primary: #315b4d;
+    --primary-dark: #244638;
+    --text: #252923;
+    --muted: #777b72;
+    --border: #e2e0d6;
+    --input-bg: #fbfaf7;
+    --radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.65;
+    min-height: 100vh;
+}
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 18px 7%;
+
+    background: rgba(255, 255, 255, 0.94);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: var(--primary);
+    color: #ffffff;
+    border-radius: 9px;
+
+    font-size: 17px;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.logo span {
+    color: #d1d9cb;
+}
+
+.navbar h2 {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.navbar p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+.status {
+    margin-left: auto;
+    padding: 6px 11px;
+
+    background: #edf1e9;
+    color: #49664f;
+    border: 1px solid #dce4d7;
+    border-radius: 30px;
+
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.7px;
+    white-space: nowrap;
+}
+
+/* =========================================
+   PAGE LAYOUT
+========================================= */
+
+.container {
+    width: 88%;
+    max-width: 1120px;
+    margin: 42px auto 65px;
+
+    animation: fadeIn 0.55s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   INTRODUCTION / HERO
+========================================= */
+
+.welcome {
+    padding: 8px 0 30px;
+}
+
+.tag {
+    margin-bottom: 10px;
+
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+}
+
+.welcome h1 {
+    max-width: 750px;
+    margin-bottom: 13px;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: clamp(35px, 4.5vw, 52px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -1.1px;
+}
+
+.welcome h1 span {
+    color: var(--primary);
+}
+
+.welcome > p:last-child {
+    max-width: 660px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+/* =========================================
+   NETWORK OVERVIEW
+========================================= */
+
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 16px;
+    margin: 5px 0 30px;
+}
+
+.summary-card {
+    position: relative;
+    padding: 22px 23px;
+    overflow: hidden;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+
+    transition: transform 0.2s ease,
+                border-color 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+    border-color: #b6c4b6;
+}
+
+.summary-card p {
+    color: var(--muted);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.4px;
+}
+
+.summary-card h3 {
+    margin: 5px 0 2px;
+
+    color: var(--primary);
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.summary-card span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================================
+   MAIN FORM PANEL
+========================================= */
+
+.form-card {
+    position: relative;
+    padding: 32px;
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: 14px;
+
+    box-shadow: 0 8px 28px rgba(48, 49, 37, 0.035);
+}
+
+/* Understated green top accent */
+.form-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 32px;
+    right: 32px;
+    height: 2px;
+
+    background: var(--primary);
+    opacity: 0.8;
+}
+
+/* =========================================
+   FORM HEADER
+========================================= */
+
+.form-heading {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 15px;
+
+    padding: 5px 0 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-heading h2 {
+    margin-bottom: 5px;
+
+    font-family: 'Playfair Display', Georgia, serif;
+    font-size: 27px;
+    font-weight: 600;
+}
+
+.form-heading p:not(.tag) {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.step {
+    flex-shrink: 0;
+    padding: 6px 10px;
+
+    color: var(--primary);
+    background: var(--surface-soft);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin: 28px 0 19px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: -0.1px;
+}
+
+.section-title::before {
+    content: "";
+    width: 3px;
+    height: 20px;
+    flex-shrink: 0;
+
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.full-width {
+    margin-top: 20px;
+}
+
+/* =========================================
+   FORM LABELS
+========================================= */
+
+label {
+    margin-bottom: 7px;
+
+    color: #3b4038;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================
+   INPUTS AND SELECT BOXES
+========================================= */
+
+input,
+select,
+textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 12px 13px;
+
+    color: var(--text);
+    background: var(--input-bg);
+    border: 1px solid #dcdcd3;
+    border-radius: 7px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+
+    outline: none;
+    transition: border-color 0.2s ease,
+                box-shadow 0.2s ease,
+                background 0.2s ease;
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+    border-color: #b5beb1;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    background: #ffffff;
+    border-color: #6e8b78;
+    box-shadow: 0 0 0 3px rgba(49, 91, 77, 0.08);
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #a0a198;
+}
+
+select {
+    cursor: pointer;
+}
+
+select option {
+    background: #ffffff;
+    color: var(--text);
+}
+
+textarea {
+    min-height: 95px;
+    resize: vertical;
+    line-height: 1.7;
+}
+
+small {
+    margin-top: 7px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   INFORMATION NOTICE
+========================================= */
+
+.notice {
+    margin-top: 28px;
+    padding: 18px 20px;
+
+    background: #f5f5ef;
+    border: 1px solid #e4e4d8;
+    border-left: 3px solid #708675;
+    border-radius: 7px;
+}
+
+.notice strong {
+    color: var(--primary-dark);
+    font-size: 12px;
+}
+
+.notice p {
+    margin-top: 5px;
+    color: #686d64;
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 11px;
+    margin-top: 26px;
+}
+
+button {
+    padding: 12px 18px;
+    border-radius: 7px;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s ease,
+                border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.reset-btn {
+    color: #555b52;
+    background: #ffffff;
+    border: 1px solid #dcdcd3;
+}
+
+.reset-btn:hover {
+    background: #f1f0ea;
+    border-color: #c8c9bd;
+}
+
+.submit-btn {
+    color: #ffffff;
+    background: var(--primary);
+    border: 1px solid var(--primary);
+}
+
+.submit-btn:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-1px);
+}
+
+button:active {
+    transform: scale(0.99);
+}
+
+button:focus-visible {
+    outline: 2px solid #708675;
+    outline-offset: 3px;
+}
+
+/* =========================================
+   FOOTER NOTE
+========================================= */
+
+.footer-note {
+    margin-top: 19px;
+    color: #85877f;
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 760px) {
+    .container {
+        width: 92%;
+        margin-top: 30px;
+    }
+
+    .navbar {
+        padding: 15px 4%;
+    }
+
+    .summary {
+        gap: 10px;
+    }
+
+    .summary-card {
+        padding: 17px 14px;
+    }
+
+    .summary-card h3 {
+        font-size: 23px;
+    }
+
+    .form-card {
+        padding: 25px 22px;
+    }
+
+    .form-card::before {
+        left: 22px;
+        right: 22px;
+    }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 540px) {
+    .navbar h2 {
+        font-size: 13px;
+    }
+
+    .navbar p {
+        font-size: 11px;
+    }
+
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+
+    .status {
+        font-size: 8px;
+        padding: 5px 7px;
+        letter-spacing: 0;
+    }
+
+    .container {
+        width: 92%;
+        margin-top: 24px;
+    }
+
+    .welcome h1 {
+        font-size: 35px;
+        letter-spacing: -0.7px;
+    }
+
+    .summary {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .summary-card {
+        padding: 15px 18px;
+    }
+
+    .summary-card h3 {
+        font-size: 23px;
+    }
+
+    .form-card {
+        padding: 22px 16px;
+    }
+
+    .form-card::before {
+        left: 16px;
+        right: 16px;
+    }
+
+    .form-heading {
+        gap: 8px;
+    }
+
+    .form-heading h2 {
+        font-size: 23px;
+    }
+
+    .step {
+        padding: 5px 7px;
+        font-size: 9px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .actions {
+        flex-direction: column-reverse;
+    }
+
+    .actions button {
+        width: 100%;
+    }
+}
+
+/* Accessibility: reduce motion if requested */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+}

@@ -1,0 +1,215 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipment Recovery | Sudha Home Products</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <div class="logo">SH<span>+</span></div>
+        <div>
+            <h2>Sudha Home Products</h2>
+            <p>Supply Chain Control Tower</p>
+        </div>
+        <div class="status">● SYSTEM ONLINE</div>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <p class="tag">SHIPMENT RECOVERY SYSTEM</p>
+            <h1>Plan Your <span>Recovery.</span></h1>
+            <p>
+                Enter your shipment requirements to compare recovery
+                options and identify the best way to protect depot stock
+                and customer commitments.
+            </p>
+        </section>
+
+        <section class="summary">
+            <div class="summary-card">
+                <p>NETWORK</p>
+                <h3>2 Plants</h3>
+                <span>Supply locations</span>
+            </div>
+
+            <div class="summary-card">
+                <p>DEPOTS</p>
+                <h3>15</h3>
+                <span>Distribution centres</span>
+            </div>
+
+            <div class="summary-card">
+                <p>CARRIERS</p>
+                <h3>6</h3>
+                <span>Transport partners</span>
+            </div>
+        </section>
+
+        <section class="form-card">
+
+            <div class="form-heading">
+                <div>
+                    <p class="tag">NEW REQUEST</p>
+                    <h2>Shipment Details</h2>
+                    <p>Provide the details below to evaluate recovery plans.</p>
+                </div>
+                <span class="step">01 / 02</span>
+            </div>
+
+            <form action="#" method="post">
+
+                <h3 class="section-title">01. Shipment Information</h3>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="source">Stock Coming From *</label>
+                        <select id="source" name="source" required>
+                            <option value="">Select source</option>
+                            <option value="plant1">Plant 1</option>
+                            <option value="plant2">Plant 2</option>
+                            <option value="hubli">Hubli Depot</option>
+                            <option value="dharwad">Dharwad Depot</option>
+                            <option value="other">Other Depot</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="destination">Deliver Stock To *</label>
+                        <select id="destination" name="destination" required>
+                            <option value="">Select destination</option>
+                            <option value="hubli">Hubli Depot</option>
+                            <option value="dharwad">Dharwad Depot</option>
+                            <option value="other">Other Depot</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="product">Product Name / SKU *</label>
+                        <input type="text" id="product" name="product"
+                               placeholder="e.g. Detergent - SKU101" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="quantity">Quantity Required (Cases) *</label>
+                        <input type="number" id="quantity" name="quantity"
+                               min="1" placeholder="e.g. 400" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="available">Stock Available at Source *</label>
+                        <input type="number" id="available" name="available"
+                               min="0" placeholder="e.g. 900" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="current">Stock at Destination *</label>
+                        <input type="number" id="current" name="current"
+                               min="0" placeholder="e.g. 300" required>
+                    </div>
+
+                </div>
+
+                <h3 class="section-title">02. Delivery Requirements</h3>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="date">Required Delivery Date *</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="time">Required Delivery Time *</label>
+                        <input type="time" id="time" name="time" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="demand">Average Demand (Cases/Hour) *</label>
+                        <input type="number" id="demand" name="demand"
+                               min="0.01" step="any"
+                               placeholder="e.g. 25" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="priority">Customer Priority *</label>
+                        <select id="priority" name="priority" required>
+                            <option value="">Select priority</option>
+                            <option value="normal">Normal</option>
+                            <option value="high">High</option>
+                            <option value="critical">Critical</option>
+                        </select>
+                    </div>
+
+                    <div class="field">
+                        <label for="budget">Maximum Recovery Budget (₹)</label>
+                        <input type="number" id="budget" name="budget"
+                               min="0" placeholder="e.g. 5000">
+                    </div>
+
+                    <div class="field">
+                        <label for="delay">Current Shipment Delay (Hours)</label>
+                        <input type="number" id="delay" name="delay"
+                               min="0" step="any" placeholder="e.g. 18">
+                    </div>
+
+                </div>
+
+                <h3 class="section-title">03. Recovery Preferences</h3>
+
+                <div class="field full-width">
+                    <label for="recovery">Preferred Recovery Method</label>
+                    <select id="recovery" name="recovery">
+                        <option value="auto">Let the system recommend</option>
+                        <option value="transfer">Transfer from another depot</option>
+                        <option value="emergency">Emergency truck from plant</option>
+                        <option value="partial">Partial customer fulfillment</option>
+                        <option value="combined">Combined recovery plan</option>
+                    </select>
+                    <small>
+                        The system should still evaluate cost, stock availability,
+                        delivery time and customer impact before recommending a plan.
+                    </small>
+                </div>
+
+                <div class="field full-width">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" rows="3"
+                              placeholder="Enter carrier issues, special customer requirements or other details..."></textarea>
+                </div>
+
+                <div class="notice">
+                    <strong>What happens next?</strong>
+                    <p>
+                        Your shipment details will be evaluated against available
+                        recovery options. The system will compare cost, arrival
+                        time, stockout risk and customer priority before
+                        recommending a recovery plan.
+                    </p>
+                </div>
+
+                <div class="actions">
+                    <button type="reset" class="reset-btn">Clear Form</button>
+                    <button type="submit" class="submit-btn">
+                        Compare Recovery Options →
+                    </button>
+                </div>
+
+                <p class="footer-note">
+                    All recommendations should be reviewed and approved by
+                    the logistics manager before action is taken.
+                </p>
+
+            </form>
+        </section>
+
+    </main>
+
+</body>
+</html>
